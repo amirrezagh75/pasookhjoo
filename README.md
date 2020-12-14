@@ -1,4 +1,11 @@
-# vue1
+# vue-3-test
+This is a test for vue 3 using PrimeVue as UI framework.
+In here we are trying to show some user and their details.
+
+# used technology in this repo
+Vue 3
+PrimeVue
+scss
 
 ## Project setup
 ```
