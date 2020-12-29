@@ -3,7 +3,7 @@
 <div>
     <span class="p-input-icon-left">
         <i class="pi pi-search" />
-        <InputText type="text" v-model="value1" placeholder="Search" />
+        <InputText v-model="value1" type="text" placeholder="Search" />
     </span>
     <Button lable="Search" icon = "pi pi-search" @click="sayHi"></Button>
     <Toast />
@@ -14,6 +14,8 @@
     <div>Item 3</div>
 </div>
 
+
+
 </template>
 
 <script>
@@ -22,24 +24,35 @@ import Button from 'primevue/button'
 import Toast from 'primevue/toast'
 import InputText from 'primevue/inputtext';
 import 'primeflex/primeflex.css';
+import {reactive } from 'vue'
+
+
 export default {
     
-    name : 'materialPage',
-    data () {
-        return {
-            value1 : null
-        }
-    },
+    name : 'MaterialPage',
     components : {
         Button,
         InputText,
-        Toast
+        Toast,
     },
-    methods :{
-        sayHi (){
-            this.$toast.add({severity:'info', summary: 'Searching for...', detail:this.value1, life: 3000});
+    setup(props , ctx) {
+        const state = reactive ({
+            
+        }) 
+    
+        // const computedState = computed ( ()=> state.value1)
+
+        let sayHi = () => {
+            ctx.toast.add({severity:'info', summary: 'Searching for...', detail: state.value1, life: 3000});
         }
+
+        return {
+            state,
+            sayHi,
+        }
+        
     }
+    
 }
 </script>
 

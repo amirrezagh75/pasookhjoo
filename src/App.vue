@@ -1,37 +1,65 @@
 <template>
-    <div id="nav">
-    
-        <router-link to="/">Home </router-link> |
-        <router-link to="/profile">Show users</router-link> |
-        <router-link to="/material">Material test</router-link> |
-    </div>
-    
+  
+    <menuBar :menu-items='myState.menuItems' />
     <router-view />
 </template>
 
+<script>
+import menuBar from '@/components/menu'
+import {reactive } from 'vue'
+import 'primeflex/primeflex.css'
 
+
+export default {
+    components : {
+        menuBar
+    },
+    setup (){
+        let myState = reactive({
+            menuItems : [
+                {
+                    label: 'Home',
+                    icon: 'pi pi-home',
+                    to : {name : 'Home'}
+                },
+                {
+                    label: 'User list',
+                    icon: 'pi pi-users',
+                    to : {name : 'users_page'}
+                },
+                {
+                    label: 'Material Test',
+                    icon: 'pi pi-sitemap',
+                    to : {name : 'materialPage'},
+                    target : '_blank',
+                    items : [
+                        {
+                            label: 'New 1',
+                            icon: 'pi pi-sitemap'
+                        },
+                        {
+                            separator : true
+                        },
+                        {
+                            label: 'New 2',
+                            icon: 'pi pi-sitemap'
+                        }
+                    ]
+                }
+            ]
+        })
+
+        return {
+            myState
+        }
+    }
+    
+
+}
+</script>
 
 
 <style language = "scss">
 
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-}
 
-#nav {
-    padding: 30px;
-}
-
-#nav a {
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-    color: #42b983;
-}
 </style>

@@ -16,7 +16,7 @@ import userForm from '@/components/submitNewUser'
 import 'primeflex/primeflex.css';
 
 export default {
-    name : 'test_Page',
+    name : 'TestPage',
     components : {
         showUsers,
         userForm
@@ -91,13 +91,6 @@ export default {
        }
    },
 
-   mounted () {
-       
-   },
-   
-   watch : {
-       
-   }
 
 }
 </script>

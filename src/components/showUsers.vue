@@ -1,9 +1,9 @@
 <template>
-    <div class="userList" v-for="user in users" :key="user.id">
+    <div v-for="user in users" :key="user.id" class="userList">
     
     <h1>@{{user.username}} </h1> <small class="fullname">{{fullName(user)}}</small>
-    <small class="user-badge admin" v-if="user.role =='admin'">Admin</small>
-    <small class="user-badge student" v-else-if="user.role =='student'">student</small>
+    <small v-if="user.role =='admin'" class="user-badge admin">Admin</small>
+    <small v-else-if="user.role =='student'" class="user-badge student">student</small>
     <br>
     <strong>followers</strong> {{user.followers}}
     <br>
@@ -18,13 +18,19 @@
 <script>
 
 export default {
-    name : 'showUsers',
+    name : 'ShowUsers',
     props : {
         users : {
             type : Object,
             required : true
         }
     },
+emits: ['add-follower', 'dec-follower'],
+   watch : {
+   },
+   mounted () {
+    //    this.userFollower () {}
+   },
 
     methods : {
        toggleAddFollower (uid) {
@@ -36,11 +42,6 @@ export default {
        fullName : function(user){
            return `${user.firstName} ${user.lastName}`
        }
-   },
-   mounted () {
-    //    this.userFollower () {}
-   },
-   watch : {
    }
 }
 </script>

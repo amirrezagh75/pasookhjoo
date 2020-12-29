@@ -3,29 +3,29 @@
       <form @submit.prevent = "submitNewUser">
           <div>
           <label for="username">Username</label>
-          <input type="text" name="username" v-model="user.username">
+          <input v-model="state.user.username" type="text" name="username">
           </div>
           
           <div>
 
           <label for="firstName">First name</label>
-          <input type="firstName" name="firstName" v-model="user.firstName">
+          <input v-model="state.user.firstName" type="firstName" name="firstName">
 
           <label for="lastName">Last name</label>
-          <input type="text" name="lastName" v-model="this.user.lastName">
+          <input v-model="state.user.lastName" type="text" name="lastName">
 
           </div>
 
         <div>
           <label for="email">email</label>
-          <input type="email" name="email" v-model="user.email">
+          <input v-model="state.user.email" type="email" name="email">
         </div>
 
 
          <div>
           <label for="role">User roles</label>
-          <select name="role" id="role" v-model="user.role">
-              <option v-for="(role,index) in roles" :value="role.val" :key="index">
+          <select id="role" v-model="state.user.role" name="role">
+              <option v-for="(role,index) in state.roles" :key="index" :value="role.val">
                   {{role.name}}
               </option>
           </select>
@@ -42,10 +42,13 @@
 </template>
 
 <script>
+import {reactive } from 'vue'
+
 export default {
-    name : 'userForm',
-    data () {
-        return {
+    name : 'UserForm',
+    emits: ['submit-user'],
+    setup(props , ctx) {
+        const state = reactive ({
             user : {
                 username:'',
                 firstName : '',
@@ -62,15 +65,11 @@ export default {
                 {name: 'Student' , val: 'student'},
                 {name: 'Guests' , val: 'guest'}
             ]
-            
+        })
 
-        }
-    },
-    methods : {
-
-        submitNewUser(){
-         this.$emit('submit-user' , this.user)
-         this.user = {
+  let submitNewUser =() =>{
+         ctx.emit('submit-user' , state.user)
+         state.user = {
                 username:'',
                 firstName : '',
                 lastName : '',
@@ -79,7 +78,13 @@ export default {
                 followers : 0
             }
         }
+
+        return {
+            state,
+            submitNewUser,
+        }
     }
+  
 }
 </script>
 

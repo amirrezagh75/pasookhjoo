@@ -5,7 +5,7 @@ In here we are trying to show some user and their details.
 # used technology in this repo
  - Vue 3
  - PrimeVue
- - scss
+ - =-=-=-=-=-=-=-=-=-=-=-=-=-scss
 
 ## Project setup
 ```
