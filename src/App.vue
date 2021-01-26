@@ -1,56 +1,30 @@
 <template>
   
-    <menuBar :menu-items='myState.menuItems' />
+    <menuBar :menu-items='menuItems' />
     <router-view />
+    <ScrollTop/>
 </template>
 
 <script>
 import menuBar from '@/components/menu'
 import {reactive } from 'vue'
 import 'primeflex/primeflex.css'
+import ScrollTop from 'primevue/scrolltop';
+import menuItems from '@/helpers/menuItems'
 
 
 export default {
     components : {
-        menuBar
+        menuBar,
+        ScrollTop
     },
     setup (){
         let myState = reactive({
-            menuItems : [
-                {
-                    label: 'Home',
-                    icon: 'pi pi-home',
-                    to : {name : 'Home'}
-                },
-                {
-                    label: 'User list',
-                    icon: 'pi pi-users',
-                    to : {name : 'users_page'}
-                },
-                {
-                    label: 'Material Test',
-                    icon: 'pi pi-sitemap',
-                    to : {name : 'materialPage'},
-                    target : '_blank',
-                    items : [
-                        {
-                            label: 'New 1',
-                            icon: 'pi pi-sitemap'
-                        },
-                        {
-                            separator : true
-                        },
-                        {
-                            label: 'New 2',
-                            icon: 'pi pi-sitemap'
-                        }
-                    ]
-                }
-            ]
         })
 
         return {
-            myState
+            myState,
+            menuItems
         }
     }
     
@@ -60,6 +34,6 @@ export default {
 
 
 <style language = "scss">
-
+@import "~@/style/base.scss";
 
 </style>

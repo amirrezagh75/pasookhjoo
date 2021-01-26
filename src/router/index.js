@@ -1,5 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import { createWebHistory, createRouter } from "vue-router";
+
+import Home from '../views/Home.vue';
+import page404 from '../views/404.vue';
+
 
 const routes = [
   {
@@ -63,6 +66,10 @@ const routes = [
 
 
   },
+  {path: '/*',
+  name: 'PageNotFound',
+  component: page404
+  }
 ]
 
 

@@ -6,8 +6,8 @@
 
     <template #end>
 
-        <InputText class="p-d-none p-d-md-inline-flex" placeholder="Search" type="text" />
-        <Button class="p-d-none p-d-md-inline-flex" label="Logout" icon="pi pi-power-off" :style="{'margin-left': '0 .5em'}"/>
+        <InputText class="p-d-none p-d-md-inline-flex" placeholder="سوالت چیه" type="text" />
+        <Button class="p-d-none p-d-md-inline-flex" label="جست و جو" icon="pi pi-search" :style="{'margin-left': '0 .5em'}"/>
 
 
     </template>
@@ -43,7 +43,6 @@ export default {
     setup () {
         
         let myState =  reactive ({
-         
         })
     
         return {

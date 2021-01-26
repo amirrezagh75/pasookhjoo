@@ -8,7 +8,7 @@
     <Button lable="Search" icon = "pi pi-search" @click="sayHi"></Button>
     <Toast />
 </div>
-<div class="p-d-flex">
+<div class="p-d-flex p-flex-column">
     <div class="p-mr-2">Item 1</div>
     <div class="p-mr-2">Item 2</div>
     <div>Item 3</div>
@@ -37,7 +37,7 @@ export default {
     },
     setup(props , ctx) {
         const state = reactive ({
-            
+            value1:""
         }) 
     
         // const computedState = computed ( ()=> state.value1)

@@ -5,8 +5,6 @@
 <userForm @submit-user = 'AddNewUser' />
 </div>
 
-
-
 </template>
 
 <script>

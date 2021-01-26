@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import {reactive} from 'vue'
 
 export default {
     name : 'ShowUsers',
@@ -25,29 +26,38 @@ export default {
             required : true
         }
     },
-emits: ['add-follower', 'dec-follower'],
-   watch : {
-   },
-   mounted () {
-    //    this.userFollower () {}
-   },
+    emits: ['add-follower', 'dec-follower'],
+    setup(props , ctx){
+        const state = new reactive({
 
-    methods : {
-       toggleAddFollower (uid) {
-           this.$emit('add-follower' , uid)
-       },
-       toggleDecFollower (uid) {
-           this.$emit('dec-follower' , uid)
-       },
-       fullName : function(user){
-           return `${user.firstName} ${user.lastName}`
-       }
-   }
+        })
+
+        let toggleAddFollower = (uid)=>{
+            ctx.emit('add-follower' , uid)
+        }
+
+        let toggleDecFollower = (uid)=>{
+            ctx.emit('dec-follower' , uid)
+        }
+
+        let fullName = (user)=>{
+            return `${user.firstName} ${user.lastName}`
+        }
+
+        return {
+            state,
+            toggleAddFollower,
+            toggleDecFollower,
+            fullName
+        }
+    },
+
+
 }
 </script>
 
 
-<style>
+<style scoped >
 .userList {
     display: inline-block;
     width: 24%;

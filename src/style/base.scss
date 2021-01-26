@@ -1,5 +1,49 @@
-body {
-    margin: 0;
-    padding: 0;
+
+@font-face{
+   font-family: "Yekan";
+   src: url(~@/fonts/Yekan/Yekan.eot);
+   src: url(~@/fonts/Yekan/Yekan.eot?#iefix) format(“embedded-opentype”), 
+   url(~@/fonts/Yekan/Yekan.woff) format(“woff”), 
+   url(~@/fonts/Yekan/Yekan.ttf) format(“truetype”), 
+   url(~@/fonts/Yekan/Yekan.svg#BYekan) format(“svg”);
+   font-weight: normal;
+   font-style: normal;
+   font-display: block;
 }
 
+@font-face {
+   font-family: "IRANSans";
+   src: url("~@/fonts/IranSans/IranSans.eot"); /* IE9*/
+   src: url("~@/fonts/IranSans/IranSans.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+   url("~@/fonts/IranSans/IranSans.woff2") format("woff2"), /* chrome、firefox */
+   url("~@/fonts/IranSans/IranSans.woff") format("woff"), /* chrome、firefox */
+   url("~@/fonts/IranSans/IranSans.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+   url("~@/fonts/IranSans/IranSans.svg#IRANSansWeb") format("svg"); /* iOS 4.1- */
+   font-weight: normal;
+   font-style: normal;
+   font-display: block;
+ }
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+::placeholder
+{
+   font-family: IRANSans , Yekan;
+   direction: rtl;
+}
+
+h4,
+h5,
+h6,
+p,
+span
+{
+   font-size: 0.75rem;
+}

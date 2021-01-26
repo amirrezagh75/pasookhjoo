@@ -1,23 +1,31 @@
+let baseUrl = require("./src/helpers/index").baseUrl,
+    apiUrl = require("./src/helpers/index").apiUrl
+
 module.exports = {
     devServer: {
+      proxy: {
+
+        '/': {
+          target: baseUrl,
+          ws: true,
+          changeOrigin: true
+        },
+
+        '^/api': {
+          target: apiUrl,
+          ws: true,
+          changeOrigin: true
+        }
+      },
       overlay: {
         warnings: true,
         errors: true
       }
     },
-
-    //   chainWebpack: config => {
-    //     config
-    //         .plugin('html')
-    //         .tap(args => {
-    //             args[0].title = process.env.Site_Name;
-    //             return args;
-    //         })
-    // }
     css :{
         loaderOptions : {
-            sass : {
-                additionalData : '@import "@/styles/base.scss"'
+            scss : {
+                additionalData : '@import "~@/style/base.scss";'
             }
         }
     }

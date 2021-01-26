@@ -88,7 +88,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 .userForm {
     display: flex;
     flex-direction: column;
