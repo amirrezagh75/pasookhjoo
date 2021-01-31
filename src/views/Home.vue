@@ -1,9 +1,11 @@
 <template>
 
-    <section class="p-grid p-flex-column container section" style="width:100%; height: auto;">
-      <SearchBox/>
+    <section v-if="! state.seachKey" class="p-grid p-flex-column container section" style="width:100%; height: auto;">
+      <SearchBox  @SearchValue = "searchKeyWord"/>
     </section>
-
+    <section v-else>
+      hello
+    </section>
     
 </template>
 
@@ -19,10 +21,15 @@ export default {
   },
   setup(){
     const state = reactive({
-      
+      seachKey : ""
     })
+    let searchKeyWord = (searchValue)=>{
+      console.log(...searchValue)
+      state.seachKey = searchValue
+    }
     return{
-      state
+      state,
+      searchKeyWord
     }
   }
 }

@@ -24,6 +24,9 @@ export default {
     InputText,
     Button
   },
+
+  emits: ['SearchValue'],
+  
   data(){
     return{
 
@@ -34,6 +37,7 @@ export default {
   watch:{
     
   },
+  
   methods: {
     searchKeyWord(){
       if(this.searchValue.length > 3){
@@ -46,7 +50,7 @@ export default {
           }
         })
         .then(response=>{
-          console.log(response.data)
+          this.$emit("SearchValue",response.data)
         })
         .catch(err=>console.error(`searchKeyword error:${err}`))
       }

@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-import {apiUrl} from '@/helpers'
+
 
 export default createStore({
   state: {
@@ -16,7 +16,7 @@ export default createStore({
   },
   actions: {
     async Login({contex},{username,password}){
-      let userData = await this.$axios.post(`${apiUrl}/login` , {username , password}).then(res=>{
+      let userData = await this.$axios.post(`api/login` , {username , password}).then(res=>{
         return res[0].data
       })
       let Token = userData.Token ,  role = userData.role , name = userData.name;

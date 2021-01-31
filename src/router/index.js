@@ -3,14 +3,13 @@ import { createWebHistory, createRouter } from "vue-router";
 import Home from '../views/Home.vue';
 import page404 from '../views/404.vue';
 
-
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home,
     meta: {
-      title: `Test vue`,
+      title: `${process.env.VUE_APP_Name}`,
       metaTags: [
         {
           name: 'description',
@@ -28,7 +27,7 @@ const routes = [
     name : 'users_page',
     component : ()=> import('@/views/showProfile.vue'),
     meta: {
-      title: `Test vue | users page`,
+      title: `${process.env.VUE_APP_Name} | users page`,
       metaTags: [
         {
           name: 'description',
@@ -50,7 +49,7 @@ const routes = [
     
     meta: {
 
-      title: `Test vue | prime vue`,
+      title: `${process.env.VUE_APP_Name} | prime vue`,
       metaTags: [
         {
           name: 'description',
@@ -65,6 +64,14 @@ const routes = [
     }
 
 
+  },
+  {
+    path:'/search/:key',
+    name : "SearchPage",
+    component :"",
+    meta :{
+      title: `${process.env.VUE_APP_Name} | جست و جو`
+    }
   },
   {path: '/*',
   name: 'PageNotFound',

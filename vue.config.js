@@ -1,18 +1,15 @@
-let baseUrl = require("./src/helpers/index").baseUrl,
-    apiUrl = require("./src/helpers/index").apiUrl
-
 module.exports = {
     devServer: {
       proxy: {
 
         '/': {
-          target: baseUrl,
+          target: process.env.BaseUrl,
           ws: true,
           changeOrigin: true
         },
 
         '^/api': {
-          target: apiUrl,
+          target: process.env.ApiUrl,
           ws: true,
           changeOrigin: true
         }
