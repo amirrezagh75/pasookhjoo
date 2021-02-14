@@ -35,16 +35,21 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
     '@nuxtjs/auth-next',
-    // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/axios',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: process.env.BaseUrl, // Used as fallback if no runtime config is provided
+    proxy: true,
+  },
+  proxy: {
+    '/api/': { 
+      target: process.env.BaseUrl, 
+      pathRewrite: {'^/api/': ''}, 
+      changeOrigin: true 
+    },
   },
 
   auth: {
