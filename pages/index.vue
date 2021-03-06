@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <v-container>
     <p>
       hello
     </p>
@@ -20,8 +20,9 @@
       v-model="SearchKey"
       label="Main input"
       hide-details="auto"
-    ></v-text-field>
-  </div>
+    >
+    </v-text-field>
+  </v-container>
 </template>
 
 <script>
@@ -29,12 +30,12 @@ export default {
   data() {
     return {
       state: '',
+      SearchKey:'',
     }
   },
   head() {
     return {
       title: 'صفحه نخست',
-      SearchKey:'',
     }
   },
   methods: {
