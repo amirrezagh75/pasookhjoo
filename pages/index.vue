@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <!-- <p>
+  <v-container>
+    <p>
       hello
     </p>
     <v-btn
@@ -20,8 +20,9 @@
       v-model="SearchKey"
       label="Main input"
       hide-details="auto"
-    ></v-text-field> -->
-  </div>
+    >
+    </v-text-field>
+  </v-container>
 </template>
 
 <script>
@@ -29,12 +30,12 @@ export default {
   data() {
     return {
       state: '',
+      SearchKey:'',
     }
   },
   head() {
     return {
       title: 'صفحه نخست',
-      SearchKey:'',
     }
   },
   methods: {
