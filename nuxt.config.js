@@ -75,6 +75,7 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
+    rtl: true,
     treeShake: true,
     // defaultAssets: false,
     customVariables: ['~/assets/variables.scss'],

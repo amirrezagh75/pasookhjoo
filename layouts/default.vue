@@ -20,7 +20,6 @@
   </v-app>
 </template>
 
-
 <script>
 import Nav from '~/components/Nav.vue';
 export default {
@@ -38,4 +37,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 </style>

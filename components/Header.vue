@@ -8,29 +8,8 @@
       dense
       dark
     >
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-      <v-form>      
-        <v-text-field
-        class="search"
-        placeholder="جستجو"
-        filled
-        shaped
-        single-line
-        dense
-        />
-      </v-form>
       
-
-      <v-spacer />
-      <v-toolbar-title>پاسخجو</v-toolbar-title>
-
-      <v-spacer />
-
-      <v-btn icon>
-        <v-icon>mdi-bell-ring</v-icon>
-      </v-btn>
+      
 
       <v-menu
         left
@@ -56,6 +35,31 @@
           </v-list-item>
         </v-list>
       </v-menu>
+
+      <v-btn icon>
+        <v-icon>mdi-bell-ring</v-icon>
+      </v-btn>
+
+      <v-spacer />
+      <v-toolbar-title>پاسخجو</v-toolbar-title>
+
+      <v-spacer />
+
+      
+
+      <v-form>      
+        <v-text-field
+        class="search"
+        placeholder="جستجو"
+        filled
+        shaped
+        single-line
+        dense
+        />
+      </v-form>
+      <v-btn icon>
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
     </v-app-bar>
   </div>
 </template>
@@ -80,8 +84,5 @@ computed: {
     text-align: right;
   }
 
-  .search >>> input {
-  direction: rtl;
-  text-align: right;
-}
+  
 </style>
