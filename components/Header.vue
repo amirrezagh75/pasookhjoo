@@ -72,7 +72,7 @@ computed: {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
   .search {
     position: relative;
