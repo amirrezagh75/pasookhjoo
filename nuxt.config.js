@@ -77,7 +77,6 @@ export default {
   vuetify: {
     rtl: true,
     treeShake: true,
-    // defaultAssets: false,
     customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: false,
